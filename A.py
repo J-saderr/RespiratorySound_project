@@ -76,9 +76,9 @@ def plot_audio_analysis(y, sr, title, ax):
 
 def main():
     # Read data
-    diagnosis = pd.read_csv('../RespiratorySound_proj/Respiratory_Sound_Database/Respiratory_Sound_Database/patient_diagnosis.csv', 
+    diagnosis = pd.read_csv('../RespiratorySound_project/Respiratory_Sound_Database/Respiratory_Sound_Database/patient_diagnosis.csv', 
                             names = ['Patient id', 'Diagnosis'])
-    path = '../RespiratorySound_proj/Respiratory_Sound_Database/Respiratory_Sound_Database/audio_and_txt_files/'
+    path = '../RespiratorySound_project/Respiratory_Sound_Database/Respiratory_Sound_Database/audio_and_txt_files/'
     files = [s.split('.')[0] for s in os.listdir(path) if '.txt' in s]
 
     # Extract recording information
