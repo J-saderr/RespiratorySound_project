@@ -138,9 +138,7 @@ def main():
     # Replace 'COPD' with 1, and others with 0
     df['Diagnosis'] = df['Diagnosis'].apply(lambda x: 1 if x == 'COPD' else 0)
 
-    # Print the first few rows
-    print(df.head())
+    df.to_csv('df.csv', index=False)
 
 if __name__ == '__main__':
     main()
-
