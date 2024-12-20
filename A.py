@@ -85,7 +85,7 @@ def main():
     i_list = [Extract_Annotation_Data(s, path) for s in files]
     recording_info = pd.concat(i_list, axis=0)
     recording_info['Patient id'] = recording_info['Patient id'].apply(pd.to_numeric, errors='coerce')
-    recording_info = recording_info.drop(['Recording index', 'Chest location', 'Acquisition mode'], axis=1, errors='ignore')
+    recording_info = recording_info.drop(['Recording index', 'Recording equipment', 'Acquisition mode'], axis=1, errors='ignore')
 
     # Process audio files in parallel
     audio_files = glob.glob(os.path.join(path, "*.wav"))
@@ -137,7 +137,6 @@ def main():
 
     # Replace 'COPD' with 1, and others with 0
     df['Diagnosis'] = df['Diagnosis'].apply(lambda x: 1 if x == 'COPD' else 0)
-
     df.to_csv('df.csv', index=False)
 
 if __name__ == '__main__':
