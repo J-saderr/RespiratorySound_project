@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns # type: ignore
 from scipy.stats import zscore
 import glob
-import noisereduce as nr
 from concurrent.futures import ProcessPoolExecutor
 
 def Extract_Annotation_Data(file_name, root):
